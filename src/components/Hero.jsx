@@ -6,11 +6,21 @@ export default function Hero() {
     <section id="hero" className="hero-clean-section">
       <div className="hero-image-container">
         <div className="hero-image-full-wrapper">
-          {/* Responsive Picture: Desktop HD Widescreen vs Mobile Portrait */}
+          {/* Responsive Picture: Desktop HD Widescreen vs Mobile Portrait with WebP Acceleration */}
           <picture className="hero-picture-element">
             <source
               media="(max-width: 768px)"
+              type="image/webp"
+              srcSet="/assets/hero_mobile.webp"
+            />
+            <source
+              media="(max-width: 768px)"
+              type="image/jpeg"
               srcSet="/assets/hero_mobile.jpg"
+            />
+            <source
+              type="image/webp"
+              srcSet="/assets/hero_hd.webp"
             />
             <img
               src="/assets/hero_hd.jpg"
@@ -19,6 +29,8 @@ export default function Hero() {
               fetchPriority="high"
               loading="eager"
               decoding="async"
+              width="2048"
+              height="1152"
             />
           </picture>
 

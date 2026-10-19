@@ -9,11 +9,12 @@ const FRAME_PATH = (index) =>
 export default function CoconutExperience() {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
+  const progressBarRef = useRef(null);
+  const hintRef = useRef(null);
   const framesRef = useRef([]);
   const currentFrameRef = useRef(0);
   const isPreloadingRef = useRef(false);
 
-  const [progress, setProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
 
   // Render a specific frame index to canvas
@@ -63,7 +64,7 @@ export default function CoconutExperience() {
     };
   }, [drawFrame]);
 
-  // Scroll scrubbing engine with requestAnimationFrame
+  // High-performance scroll scrubbing engine with requestAnimationFrame & viewport guard
   useEffect(() => {
     let ticking = false;
 
@@ -78,8 +79,14 @@ export default function CoconutExperience() {
 
           const rect = container.getBoundingClientRect();
           const windowHeight = window.innerHeight;
-          const totalScrollDistance = rect.height - windowHeight;
 
+          // Viewport Guard: If completely outside visible area (e.g. user is in Hero section), skip!
+          if (rect.top > windowHeight + 100 || rect.bottom < -100) {
+            ticking = false;
+            return;
+          }
+
+          const totalScrollDistance = rect.height - windowHeight;
           if (totalScrollDistance <= 0) {
             ticking = false;
             return;
@@ -89,7 +96,15 @@ export default function CoconutExperience() {
           const rawProgress = scrolledPixels / totalScrollDistance;
           const clampedProgress = Math.max(0, Math.min(1, rawProgress));
 
-          setProgress(clampedProgress);
+          // Direct DOM style updates to avoid React re-render lag
+          if (progressBarRef.current) {
+            progressBarRef.current.style.width = `${clampedProgress * 100}%`;
+          }
+
+          if (hintRef.current) {
+            hintRef.current.style.opacity = clampedProgress < 0.08 ? '1' : '0';
+            hintRef.current.style.pointerEvents = clampedProgress < 0.08 ? 'auto' : 'none';
+          }
 
           const targetFrame = Math.min(
             TOTAL_FRAMES - 1,
@@ -175,8 +190,9 @@ export default function CoconutExperience() {
             {/* Subtle Progress Bar on the portal threshold */}
             <div className="portal-progress-bar">
               <div
+                ref={progressBarRef}
                 className="portal-progress-fill"
-                style={{ width: `${progress * 100}%` }}
+                style={{ width: '0%' }}
               />
             </div>
 
@@ -188,17 +204,13 @@ export default function CoconutExperience() {
             )}
           </div>
 
-
-
           {/* Scroll Hint Indicator at Start */}
-          {progress < 0.08 && (
-            <div className="scroll-scrub-hint">
-              <span className="hint-pill">
-                <ArrowDown size={14} className="hint-arrow" />
-                <span>Scroll to Extract 3D Coconut Milk</span>
-              </span>
-            </div>
-          )}
+          <div ref={hintRef} className="scroll-scrub-hint">
+            <span className="hint-pill">
+              <ArrowDown size={14} className="hint-arrow" />
+              <span>Scroll to Extract 3D Coconut Milk</span>
+            </span>
+          </div>
 
 
         </div>

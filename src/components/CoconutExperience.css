@@ -282,6 +282,7 @@
   z-index: 15;
   pointer-events: none;
   animation: bounceHint 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
 }
 
 .hint-pill {
