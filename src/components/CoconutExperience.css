@@ -1,0 +1,462 @@
+/* ==========================================================================
+   COCONUT 3D FACTORY PORTAL EXPERIENCE
+   PRECISION INTEGRATION: 3D ANIMATION EMBEDDED DIRECTLY IN FACTORY GATE
+   ========================================================================== */
+
+.coconut-experience-container {
+  position: relative;
+  width: 100%;
+  height: 240vh;
+  background: #0B1E13;
+  color: var(--color-white);
+  contain: paint;
+}
+
+.experience-sticky-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+  background: #0B1E13;
+}
+
+/* Ambient Blurred Background Layer (fills ultra-wide or tall screens) */
+.factory-ambient-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.factory-ambient-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(28px) brightness(0.65) saturate(1.1);
+  transform: scale(1.08);
+}
+
+.factory-ambient-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(11, 30, 19, 0.2) 0%, rgba(11, 30, 19, 0.8) 75%, #0B1E13 100%);
+}
+
+/* 16:9 Aspect-Ratio Locked Factory Gate Stage */
+.factory-scene-stage {
+  position: relative;
+  z-index: 5;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Factory Background Image */
+.factory-scene-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   PRECISION PORTAL CANVAS MOUNT
+   MATHEMATICAL 1:1 ALIGNMENT WITH THE STANDING PHONE/MIRROR FRAME
+   (Coordinates based on 1024x576 source: 446px, 167px, 156px, 278px)
+   ========================================================================== */
+
+.portal-canvas-mount {
+  position: absolute;
+  left: 43.555%;
+  top: 28.993%;
+  width: 15.234%;
+  height: 48.264%;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.coconut-portal-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  background: #000000;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.portal-glass-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 55%);
+  z-index: 3;
+}
+
+.portal-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+
+.portal-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-parrot-green), var(--color-gold));
+  transition: width 0.08s linear;
+}
+
+.portal-loader-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 30, 19, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.portal-loader-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2.5px solid rgba(34, 154, 62, 0.3);
+  border-top-color: var(--color-parrot-green);
+  border-radius: 50%;
+  animation: spinPortal 0.8s linear infinite;
+}
+
+@keyframes spinPortal {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   DESKTOP NARRATIVE OVERLAYS (FLANKING THE FACTORY GATES)
+   ========================================================================== */
+
+.factory-narrative-overlay {
+  position: absolute;
+  top: 32%;
+  z-index: 10;
+  max-width: 320px;
+  pointer-events: none;
+}
+
+.factory-narrative-overlay.side-left {
+  left: 3%;
+  text-align: left;
+}
+
+.factory-narrative-overlay.side-right {
+  right: 3%;
+  text-align: left;
+}
+
+.story-caption-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid var(--color-parrot-green);
+  border-radius: 22px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28), 0 0 20px rgba(34, 154, 62, 0.15);
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
+}
+
+.story-caption-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  display: block;
+}
+
+.story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-parrot-green-deep);
+  background: var(--color-soft-mint);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-parrot-green);
+  margin-bottom: 0.55rem;
+}
+
+.story-badge.badge-gold {
+  color: #8C6514;
+  background: #FFF7DE;
+  border-color: var(--color-gold);
+}
+
+.story-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0A2B18;
+  line-height: 1.2;
+  margin: 0 0 0.2rem 0;
+}
+
+.story-tamil {
+  font-family: var(--font-tamil-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+  margin: 0 0 0.45rem 0;
+  line-height: 1.35;
+}
+
+.story-desc {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #2D4C38;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+.story-features-capsule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.65rem 0 1rem 0;
+}
+
+.feature-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0A2B18;
+}
+
+.feature-check-icon {
+  color: var(--color-parrot-green);
+  flex-shrink: 0;
+}
+
+.story-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 20px rgba(34, 154, 62, 0.35);
+  text-decoration: none;
+}
+
+/* Scroll Scrub Hint Pill */
+.scroll-scrub-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+  animation: bounceHint 2s ease-in-out infinite;
+}
+
+.hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(10, 30, 18, 0.94);
+  border: 1.5px solid var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+}
+
+.hint-arrow {
+  color: var(--color-parrot-green);
+  animation: pulseArrow 1.5s infinite;
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+@keyframes pulseArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (PERFECT CENTER FOCUS & FLOATING SUBTITLE PILL)
+   ========================================================================== */
+
+.mobile-caption-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.mobile-caption-inner {
+  background: rgba(8, 24, 15, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--color-parrot-green);
+  border-radius: 18px;
+  padding: 0.7rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.pill-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8FD8A0;
+  text-transform: uppercase;
+}
+
+.pill-title {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.pill-sub {
+  font-family: var(--font-tamil-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #D2ECD8;
+}
+
+.animate-fade-in {
+  animation: fadeInPill 0.35s ease-out;
+}
+
+@keyframes fadeInPill {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Seamless Top & Bottom Transitions */
+.experience-top-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, #BBE7F2 0%, rgba(187, 231, 242, 0.45) 45%, rgba(11, 30, 19, 0.75) 80%, #0B1E13 100%);
+  pointer-events: none;
+  z-index: 25;
+}
+
+.experience-bottom-blend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, transparent 0%, rgba(250, 248, 242, 0.35) 30%, rgba(250, 248, 242, 0.8) 65%, #FAF8F2 100%);
+  pointer-events: none;
+  z-index: 25;
+}
+
+@media (max-width: 900px) {
+  .experience-top-blend {
+    height: 90px;
+    background: linear-gradient(180deg, #0B1E13 0%, rgba(11, 30, 19, 0.95) 40%, #0B1E13 100%);
+  }
+  /* Phone View: Fullscreen 3D Animation with NO background picture */
+  .factory-ambient-backdrop,
+  .factory-scene-bg-img {
+    display: none !important;
+  }
+
+  .factory-scene-stage {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #000000 !important;
+  }
+
+  .portal-canvas-mount {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .coconut-portal-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .factory-narrative-overlay {
+    display: none !important;
+  }
+
+  .scroll-scrub-hint {
+    bottom: 85px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-scrub-hint {
+    bottom: 75px;
+  }
+}

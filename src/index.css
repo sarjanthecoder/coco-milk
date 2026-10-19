@@ -1,0 +1,322 @@
+/* ==========================================================================
+   THATHA THENGAI PAAL (தாத்தா தேங்காய் பால்) — CORE DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Exact Brand Color System with User-Specified Rich Parrot Green */
+  --color-primary-green: #218C3A;
+  --color-parrot-green: #229A3E;          /* Vibrant medium-dark parrot green */
+  --color-parrot-green-deep: #1A7E31;     /* Deep contrast parrot green */
+  --color-parrot-green-border: #229A3E;   /* Clean crisp green border */
+  --color-parrot-green-soft: rgba(34, 154, 62, 0.45);
+  --color-parrot-green-glow: rgba(34, 154, 62, 0.25);
+  --color-deep-green: #14532D;
+  --color-bright-green: #35A853;
+  --color-soft-mint: #DDF3D7;
+  --color-turquoise: #16BFD0;
+  --color-deep-ocean: #087EA4;
+  --color-cream: #FFF8E9;
+  --color-cream-light: #FFFCF5;
+  --color-white: #FFFFFF;
+  --color-gold: #D6AC48;
+  --color-gold-light: #F4E5B8;
+  --color-gold-dark: #A9832B;
+  --color-text-main: #143522;
+  --color-text-muted: #2E5C41;
+  --color-text-light: #4A7A5E;
+
+  /* Variant Specific Accents */
+  --accent-sugar: #D6AC48;
+  --accent-no-sugar: #229A3E;
+  --accent-pepper: #8B5A2B;
+
+  /* Typography */
+  --font-tamil: 'Baloo Thambi 2', 'Noto Sans Tamil', -apple-system, sans-serif;
+  --font-tamil-body: 'Noto Sans Tamil', -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 6px rgba(20, 83, 45, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 83, 45, 0.12);
+  --shadow-lg: 0 16px 40px rgba(20, 83, 45, 0.16);
+  --shadow-xl: 0 24px 60px rgba(20, 83, 45, 0.22);
+  --shadow-bottle: 0 30px 60px -15px rgba(20, 83, 45, 0.35);
+  --shadow-gold: 0 4px 20px rgba(214, 172, 72, 0.3);
+  --shadow-parrot: 0 8px 24px rgba(34, 154, 62, 0.2);
+
+  /* Borders & Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Transitions — GPU Accelerated for 120Hz-200Hz Fluidity */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Layout */
+  --max-width: 1240px;
+  --nav-height: 90px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --nav-height: 76px;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-cream);
+  color: var(--color-text-main);
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-cream);
+  line-height: 1.6;
+  font-weight: 500;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* GPU-Accelerated Ultra-Smooth Scrolling Optimizations */
+#story, #process, #delivery, #contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-cream);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-parrot-green-deep);
+}
+
+/* Bold Typography Defaults Across All Headings and Copy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-deep-green);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+strong, b {
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* 3D Headline Typography Styling */
+.hero-3d-headline {
+  font-family: var(--font-tamil);
+  font-weight: 800;
+  color: #176B2D;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  transform-style: preserve-3d;
+  text-shadow:
+    0 1px 0 #145924,
+    0 2px 0 #114c1e,
+    0 3px 0 #0e3f19,
+    0 4px 0 #0b3214,
+    0 5px 0 #08260f,
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 10px 18px rgba(20, 83, 45, 0.28),
+    0 20px 30px rgba(10, 40, 20, 0.15);
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtle gold lighting rim on top */
+.hero-3d-headline::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(214, 172, 72, 0.4) 40%, transparent 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+}
+
+/* Glassmorphism Classes with Parrot Green Borders */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid var(--color-parrot-green-soft);
+  box-shadow: var(--shadow-md);
+  transform: translateZ(0);
+}
+
+.glass-panel-cream {
+  background: rgba(255, 248, 233, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid var(--color-parrot-green-border);
+  box-shadow: var(--shadow-md);
+  transform: translateZ(0);
+}
+
+/* Buttons with Bold Typography & Parrot Green Accents */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(180deg, #2ECC71 0%, var(--color-parrot-green) 100%);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 0.9rem 1.9rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(34, 154, 62, 0.38), 0 2px 0 rgba(255, 255, 255, 0.25) inset;
+  transition: all var(--duration-fast) var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 154, 62, 0.48), 0 2px 0 rgba(255, 255, 255, 0.3) inset;
+  background: linear-gradient(180deg, #38DF7E 0%, #1A7E31 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(34, 154, 62, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--color-cream);
+  color: var(--color-parrot-green-deep);
+  border: 2px solid var(--color-parrot-green-border);
+  font-weight: 700;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--ease-spring);
+  transform: translateZ(0);
+}
+
+.btn-secondary:hover {
+  background: var(--color-soft-mint);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 154, 62, 0.2);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Eyebrow badge with Parrot Green Border */
+.badge-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--color-parrot-green);
+  box-shadow: 0 2px 10px rgba(34, 154, 62, 0.15);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-parrot-green-deep);
+}
+
+/* 200Hz Ultra-Fluid Hardware Acceleration Classes */
+.gpu-accel,
+.product-showcase-card,
+.circular-highlight-card,
+.process-four-card,
+.stunning-pillar-card,
+.neighborhoods-route-card,
+.faq-accordion-card-bold {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

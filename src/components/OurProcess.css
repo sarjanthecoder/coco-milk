@@ -1,0 +1,322 @@
+/* ==========================================================================
+   OUR PROCESS SECTION — STUNNING 4-COLUMN MASTER GRID
+   ========================================================================== */
+
+.stunning-process-section {
+  position: relative;
+  width: 100%;
+  padding: 5rem 2rem 5rem 2rem;
+  background: #FAF8F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   IN-CODE TROPICAL AMBIENCE
+   ========================================================================== */
+
+.process-code-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.process-sun-burst {
+  position: absolute;
+  top: -60px;
+  left: 25%;
+  right: 25%;
+  height: 380px;
+  background: radial-gradient(ellipse at center top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 220, 0.45) 45%, transparent 70%);
+  filter: blur(35px);
+}
+
+.process-bottom-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.75) 50%, #FAF8F2 100%);
+}
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+
+.process-inner-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.process-header-wrap {
+  max-width: 860px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  background: #FFFFFF;
+  border: 2px solid var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.14);
+}
+
+.eyebrow-svg-leaf {
+  color: var(--color-parrot-green);
+}
+
+.eyebrow-text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  color: var(--color-parrot-green-deep);
+  text-transform: uppercase;
+}
+
+.eyebrow-svg-sparkle {
+  color: var(--color-gold);
+}
+
+.process-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  color: #0A2B17;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0.25rem 0 0.4rem 0;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.65);
+}
+
+.process-tamil-subheading {
+  font-family: var(--font-tamil-body);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+  margin: 0 0 0.6rem 0;
+}
+
+.process-desc-paragraph {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #174229;
+  max-width: 760px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* Divider */
+.process-divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+  width: 220px;
+}
+
+.divider-h-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-parrot-green), transparent);
+}
+
+.divider-svg-droplets {
+  color: var(--color-parrot-green);
+}
+
+/* ==========================================================================
+   4-COLUMN PROCESS GRID
+   ========================================================================== */
+
+.process-four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.process-four-card {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #FCF9F0;
+  border: 2.5px solid var(--color-parrot-green);
+  box-shadow: 0 16px 40px rgba(34, 154, 62, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.process-four-card:hover {
+  transform: translate3d(0, -8px, 0) scale(1.02);
+  box-shadow: 0 24px 55px rgba(34, 154, 62, 0.22);
+  border-color: var(--color-parrot-green-deep);
+}
+
+/* Artwork Frame (Edge-to-Edge Fill) */
+.process-artwork-frame {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+  padding: 0;
+  margin: 0;
+  background: #FAF6EC;
+}
+
+.process-artwork-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.04));
+}
+
+.process-four-card:hover .process-artwork-image {
+  transform: scale(1.035);
+}
+
+/* Bottom Stage Pill */
+.process-card-stage-pill {
+  margin: 0.8rem 1rem 1.1rem 1rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 2px solid var(--color-parrot-green);
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.process-four-card:hover .process-card-stage-pill {
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 6px 18px rgba(34, 154, 62, 0.22);
+}
+
+.stage-num-badge {
+  background: var(--color-parrot-green);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  line-height: 1;
+}
+
+.stage-text-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0A2D19;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   GUARANTEE BANNER
+   ========================================================================== */
+
+.process-guarantee-banner {
+  margin-top: 3.5rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 2.5px solid var(--color-parrot-green);
+  box-shadow: 0 10px 30px rgba(34, 154, 62, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guarantee-svg-shield {
+  color: var(--color-parrot-green);
+  flex-shrink: 0;
+}
+
+.guarantee-content-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0B2B17;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.guarantee-content-text strong {
+  color: var(--color-parrot-green-deep);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .process-four-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 860px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .stunning-process-section {
+    padding: 4rem 1rem 3.5rem 1rem;
+  }
+  .process-four-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+    gap: 1.8rem;
+  }
+  .process-artwork-frame {
+    height: 460px;
+  }
+  .process-main-heading {
+    font-size: 2.3rem;
+  }
+  .process-guarantee-banner {
+    padding: 1rem 1.4rem;
+    border-radius: 24px;
+    gap: 0.75rem;
+  }
+  .guarantee-content-text {
+    font-size: 0.88rem;
+  }
+}

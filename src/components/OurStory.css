@@ -1,0 +1,619 @@
+/* ==========================================================================
+   OUR STORY SECTION STYLES — POETIC LITERARY EDITORIAL
+   ========================================================================== */
+
+.story-section {
+  padding: 5rem 0 5.5rem 0;
+  background: #FAF8F2;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%, #FAF8F2 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5.5rem;
+}
+
+.story-editorial-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.story-eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: var(--color-parrot-green-deep);
+  border: 2px solid var(--color-parrot-green);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.12);
+}
+
+.eyebrow-pin-symbol {
+  color: var(--color-parrot-green);
+  flex-shrink: 0;
+}
+
+.story-editorial-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.3rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: #0A2B17;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.story-editorial-title .title-highlight {
+  color: #B5801E;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.story-leaf-flourish {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 140px;
+  margin: -0.6rem 0 0.2rem 0;
+}
+
+.flourish-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-parrot-green), transparent);
+}
+
+.flourish-leaf-icon {
+  color: var(--color-parrot-green);
+}
+
+/* Poetic Tamil Quote Card — Literary Note Style with Parrot Green Border */
+.story-poetic-quote-card {
+  background: linear-gradient(135deg, #FCF8EC 0%, #F5ECDA 100%);
+  border: 2px solid var(--color-parrot-green-soft);
+  border-left: 6px solid var(--color-parrot-green);
+  border-radius: 22px;
+  padding: 1.4rem 1.8rem;
+  box-shadow: 0 10px 30px rgba(34, 154, 62, 0.12);
+  position: relative;
+}
+
+.poetic-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  color: #B5801E;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.poetic-quote-mark.start-quote {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+}
+
+.story-poetic-tamil-text {
+  font-family: 'Kavivanar', 'Noto Serif Tamil', cursive, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0B2B17;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  margin: 0.2rem 0;
+}
+
+.quote-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+
+.quote-footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+}
+
+.badge-leaf {
+  color: var(--color-parrot-green);
+}
+
+.badge-drop {
+  color: var(--color-parrot-green);
+}
+
+/* Generously Spaced Literary Storytelling Paragraphs */
+.story-paragraphs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.story-literary-paragraph {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.24rem;
+  font-weight: 600;
+  color: #164026;
+  line-height: 1.88;
+  letter-spacing: 0.015em;
+  margin: 0;
+}
+
+.story-literary-paragraph strong {
+  color: #092614;
+  font-weight: 800;
+}
+
+/* 3 Circular Feature Badges (Matching Reference Artwork) */
+.story-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.story-circular-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #FFFFFF;
+  border: 2px solid var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 1.15rem 0.45rem 0.55rem;
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.12);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transform: translateZ(0);
+}
+
+.story-circular-pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 8px 22px rgba(34, 154, 62, 0.22);
+}
+
+.pill-circle-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-soft-mint);
+  color: var(--color-parrot-green-deep);
+  border: 1.5px solid var(--color-parrot-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pill-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0A2D19;
+  letter-spacing: 0.02em;
+}
+
+/* Visual Frame: Thatha Holding Coconut Milk in Tropical Grove */
+.story-editorial-visual {
+  position: relative;
+  transform: translateZ(0);
+}
+
+.story-thatha-portrait-frame {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 3px solid var(--color-parrot-green);
+  box-shadow: 0 20px 52px rgba(34, 154, 62, 0.18);
+  background: #FAF7EE;
+}
+
+.story-thatha-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 85% center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  decoding: async;
+}
+
+.story-thatha-portrait-frame:hover .story-thatha-portrait-img {
+  transform: scale(1.035);
+}
+
+.story-thatha-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 65%, rgba(15, 51, 32, 0.55) 100%);
+}
+
+.story-thatha-badge-floating {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  padding: 0.85rem 1.25rem;
+  border-radius: 20px;
+  border: 2px solid var(--color-parrot-green);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 10px 28px rgba(34, 154, 62, 0.2);
+}
+
+.story-seal-mascot-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-parrot-green);
+  box-shadow: 0 4px 12px rgba(34, 154, 62, 0.25);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-white);
+}
+
+.story-seal-mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-thatha-badge-floating strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0A2D19;
+}
+
+.story-thatha-badge-floating span {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+}
+
+/* ==========================================================================
+   KEY PURITY HIGHLIGHTS SHOWCASE (CIRCULAR 3D VISUALS - COMPACT & BALANCED)
+   ========================================================================== */
+
+.story-highlights-showcase-wrap {
+  margin-top: 2.6rem;
+  width: 100%;
+}
+
+.highlights-section-header {
+  max-width: 760px;
+  margin: 0 auto 1.6rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlights-eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: var(--color-parrot-green-deep);
+  border: 2px solid var(--color-parrot-green);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.55rem;
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.12);
+}
+
+.highlights-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+  font-weight: 800;
+  color: #0A2D19;
+  letter-spacing: -0.015em;
+  margin: 0.1rem 0 0.25rem 0;
+  line-height: 1.2;
+}
+
+.highlights-tamil-heading {
+  font-family: var(--font-tamil-body);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+  margin: 0 0 0.4rem 0;
+}
+
+.highlights-sub-desc {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: #1A462B;
+  max-width: 620px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 2-Column Balanced Circular Highlights Grid */
+.highlights-circular-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.circular-highlight-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #FAFCF6 60%, #F5F9F1 100%);
+  border-radius: 28px;
+  border: 2.5px solid var(--color-parrot-green);
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 12px 32px rgba(34, 154, 62, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.circular-highlight-card:hover {
+  transform: translateY(-5px) scale(1.012);
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 18px 44px rgba(34, 154, 62, 0.2);
+}
+
+/* Perfectly Circular 3D Visual Halo (Refined Compact Scale) */
+.circular-visual-halo {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  margin-bottom: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3.5px solid var(--color-parrot-green);
+  box-shadow: 0 10px 24px rgba(34, 154, 62, 0.18), inset 0 0 0 3px #FFFFFF, inset 0 0 18px rgba(0, 0, 0, 0.12);
+  background: #FAF6EC;
+  z-index: 2;
+}
+
+.circular-highlight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  decoding: async;
+}
+
+.circular-highlight-card:hover .circular-highlight-image {
+  transform: scale(1.06);
+}
+
+.circular-glass-reflection {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 50%, rgba(20, 83, 45, 0.12) 100%);
+}
+
+.circular-ambient-glow {
+  position: absolute;
+  width: 195px;
+  height: 195px;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.glow-green {
+  background: radial-gradient(circle, rgba(34, 154, 62, 0.45) 0%, transparent 70%);
+}
+
+.glow-gold {
+  background: radial-gradient(circle, rgba(214, 172, 72, 0.45) 0%, transparent 70%);
+}
+
+.circular-highlight-card:hover .circular-ambient-glow {
+  opacity: 0.85;
+  transform: scale(1.08);
+}
+
+/* Card Content Block */
+.circular-content-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.highlight-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--color-soft-mint);
+  color: var(--color-parrot-green-deep);
+  border: 1.5px solid var(--color-parrot-green);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.85rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.35rem;
+}
+
+.highlight-tag-badge.gold-tag {
+  background: #FFF4D6;
+  color: #B5801E;
+  border-color: rgba(181, 128, 30, 0.5);
+}
+
+.highlight-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0A2D19;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.highlight-tamil-title {
+  font-family: var(--font-tamil-body);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+  margin-bottom: 0.35rem;
+}
+
+.highlight-supporting-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1A462B;
+  line-height: 1.5;
+  max-width: 420px;
+  margin-bottom: 0.95rem;
+}
+
+.highlight-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.purity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  border: 1.8px solid var(--color-parrot-green);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0A2D19;
+  box-shadow: 0 2px 8px rgba(34, 154, 62, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.purity-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 6px 14px rgba(34, 154, 62, 0.18);
+}
+
+.pill-check {
+  color: var(--color-parrot-green);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .story-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .story-featured-img {
+    height: 320px;
+  }
+  .story-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .highlights-circular-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .circular-visual-halo {
+    width: 240px;
+    height: 240px;
+  }
+  .circular-ambient-glow {
+    width: 260px;
+    height: 260px;
+  }
+  .circular-highlight-card {
+    padding: 2.4rem 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-section {
+    padding: 4rem 0;
+  }
+  .circular-visual-halo {
+    width: 210px;
+    height: 210px;
+  }
+  .circular-ambient-glow {
+    width: 230px;
+    height: 230px;
+  }
+  .highlight-card-title {
+    font-size: 1.6rem;
+  }
+}

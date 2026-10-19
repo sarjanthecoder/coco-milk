@@ -1,0 +1,588 @@
+/* ==========================================================================
+   CONTACT SECTION — EXACT CLONE DESIGN
+   TWO-COLUMN SPLIT: BRAND & QUICK ACTIONS | SEND A QUICK MESSAGE
+   ========================================================================== */
+
+.clone-contact-section {
+  position: relative;
+  width: 100%;
+  padding: 4.5rem 1.5rem 5rem 1.5rem;
+  background: #FAF8F2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.clone-contact-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%, #FAF8F2 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ambient Tropical Accents */
+.contact-ambient-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ambient-sun-burst {
+  position: absolute;
+  top: -80px;
+  left: 30%;
+  right: 30%;
+  height: 400px;
+  background: radial-gradient(ellipse at center top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 220, 0.5) 50%, transparent 70%);
+  filter: blur(35px);
+}
+
+.contact-clone-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* 2-Column Exact Layout */
+.contact-clone-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT CARD: BRAND & QUICK ACTION ACTIONS
+   ========================================================================== */
+
+.contact-clone-left-card {
+  background: #FCF8EE;
+  border-radius: 32px;
+  border: 2.5px solid var(--color-parrot-green);
+  box-shadow: 0 16px 42px rgba(34, 154, 62, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.contact-clone-left-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 52px rgba(34, 154, 62, 0.22);
+}
+
+.left-card-artwork-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+}
+
+.left-card-artwork-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Clickable WhatsApp Hotspot over the 3D Banner */
+.banner-overlay-hotspot {
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  right: 6%;
+  height: 38%;
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+}
+
+/* Bottom Action Pills Row */
+.left-card-action-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem 1.1rem 1.1rem;
+  background: #FCF8EE;
+}
+
+/* ==========================================================================
+   REAL SOCIAL MEDIA CHANNELS BAR (WHATSAPP, INSTAGRAM, FACEBOOK, X, LINKEDIN)
+   ========================================================================== */
+
+.contact-social-bar {
+  padding: 1.1rem 1.2rem 1.4rem 1.2rem;
+  background: #FAF6EB;
+  border-top: 1.5px dashed rgba(34, 154, 62, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-bar-label {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-parrot-green-deep);
+  text-transform: uppercase;
+}
+
+.social-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.social-brand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  background: #FFFFFF;
+  border: 1.8px solid rgba(34, 154, 62, 0.25);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  color: #0A2D19;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(34, 154, 62, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+}
+
+.social-svg-logo {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.social-name-tag {
+  line-height: 1;
+}
+
+.social-brand-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.social-brand-btn:hover .social-svg-logo {
+  transform: scale(1.12);
+}
+
+/* Official Brand Color Accents on Hover */
+.brand-whatsapp {
+  color: #128C7E;
+}
+.brand-whatsapp:hover {
+  background: #25D366;
+  color: #FFFFFF;
+  border-color: #25D366;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+.brand-instagram {
+  color: #C13584;
+}
+.brand-instagram:hover {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.35);
+}
+
+.brand-facebook {
+  color: #1877F2;
+}
+.brand-facebook:hover {
+  background: #1877F2;
+  color: #FFFFFF;
+  border-color: #1877F2;
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.35);
+}
+
+.brand-x {
+  color: #000000;
+}
+.brand-x:hover {
+  background: #000000;
+  color: #FFFFFF;
+  border-color: #000000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.brand-linkedin {
+  color: #0A66C2;
+}
+.brand-linkedin:hover {
+  background: #0A66C2;
+  color: #FFFFFF;
+  border-color: #0A66C2;
+  box-shadow: 0 6px 18px rgba(10, 102, 194, 0.35);
+}
+
+.action-pill-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--color-parrot-green);
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.08);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+}
+
+.action-pill-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(34, 154, 62, 0.22);
+  border-color: var(--color-parrot-green-deep);
+}
+
+.pill-btn-icon-bubble {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bubble-phone {
+  background: var(--color-soft-mint);
+  color: var(--color-parrot-green-deep);
+  border: 1.5px solid var(--color-parrot-green);
+}
+
+.bubble-wa {
+  background: #E8F8F0;
+  color: #25D366;
+  border: 1.5px solid #25D366;
+}
+
+.pill-btn-text-col {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6rem;
+  margin-right: auto;
+}
+
+.pill-btn-micro-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-parrot-green-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.pill-btn-bold-val {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0A2D19;
+  line-height: 1.25;
+}
+
+.pill-btn-arrow-icon {
+  color: var(--color-parrot-green);
+  flex-shrink: 0;
+  margin-left: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.action-pill-btn:hover .pill-btn-arrow-icon {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   RIGHT CARD: SEND A QUICK MESSAGE FORM
+   ========================================================================== */
+
+.contact-clone-right-card {
+  background: #FFFFFF;
+  border-radius: 32px;
+  padding: 2.2rem 2rem;
+  border: 2.5px solid var(--color-parrot-green);
+  box-shadow: 0 16px 42px rgba(34, 154, 62, 0.12);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateZ(0);
+}
+
+.form-coconut-corner-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+}
+
+.form-chat-badge-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--color-parrot-green);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 14px rgba(34, 154, 62, 0.25);
+}
+
+.chat-badge-svg {
+  color: #FFFFFF;
+}
+
+.form-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 2.8vw, 2.3rem);
+  font-weight: 800;
+  color: #0A2D19;
+  margin-bottom: 0.3rem;
+  line-height: 1.15;
+}
+
+.form-sub-paragraph {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #174229;
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+/* Form Groups */
+.quick-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.quick-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.quick-label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0A2D19;
+}
+
+.quick-input-box {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 2px solid var(--color-parrot-green);
+  padding: 0.65rem 0.95rem;
+  box-shadow: 0 2px 8px rgba(34, 154, 62, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.quick-input-box:focus-within {
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 0 0 4px var(--color-parrot-green-glow);
+}
+
+.input-prefix-icon {
+  color: var(--color-parrot-green);
+  margin-right: 0.65rem;
+  flex-shrink: 0;
+}
+
+.quick-text-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #0A2D19;
+  background: transparent;
+}
+
+.quick-text-input::placeholder {
+  color: #5A836D;
+  font-weight: 600;
+}
+
+/* Textarea */
+.quick-textarea-box {
+  display: flex;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 2px solid var(--color-parrot-green);
+  padding: 0.65rem 0.95rem;
+  box-shadow: 0 2px 8px rgba(34, 154, 62, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.quick-textarea-box:focus-within {
+  border-color: var(--color-parrot-green-deep);
+  box-shadow: 0 0 0 4px var(--color-parrot-green-glow);
+}
+
+.textarea-prefix-icon {
+  color: var(--color-parrot-green);
+  margin-right: 0.65rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.quick-textarea-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #0A2D19;
+  resize: none;
+  background: transparent;
+  line-height: 1.45;
+}
+
+.quick-textarea-input::placeholder {
+  color: #5A836D;
+  font-weight: 600;
+}
+
+/* Submit Button */
+.quick-submit-pill-btn {
+  width: 100%;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #2ECC71 0%, var(--color-parrot-green) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 800;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(34, 154, 62, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0.25rem;
+  transform: translateZ(0);
+}
+
+.quick-submit-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(20, 83, 45, 0.28);
+  filter: brightness(1.05);
+}
+
+.submit-plane-icon,
+.submit-arrow-icon {
+  flex-shrink: 0;
+}
+
+/* Success State */
+.form-success-wrapper {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.success-check-icon {
+  color: #218C3A;
+}
+
+.success-heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: #123824;
+}
+
+.success-paragraph {
+  font-size: 0.95rem;
+  color: #4B6E5A;
+  max-width: 360px;
+}
+
+.send-another-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background: #FCF8EE;
+  border: 1.5px solid rgba(214, 172, 72, 0.5);
+  color: #123824;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.send-another-btn:hover {
+  background: #F4EAD2;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .contact-clone-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .clone-contact-section {
+    padding: 3.5rem 1rem;
+  }
+  .contact-clone-right-card {
+    padding: 2rem 1.4rem;
+  }
+  .left-card-action-pills {
+    grid-template-columns: 1fr;
+    padding: 1rem 1.2rem 1.4rem 1.2rem;
+  }
+  .form-main-heading {
+    font-size: 2rem;
+  }
+  .quick-submit-pill-btn {
+    font-size: 0.96rem;
+    padding: 0.85rem 1.2rem;
+  }
+}
